@@ -721,7 +721,7 @@ coroutine.wrap(PPJQ_fake_script)()
 
 local EpicLib = {}
 
-function lib:CreateTab(text)
+function EpicLib:CreateTab(text)
     text = text or "NewTab"
 
     
