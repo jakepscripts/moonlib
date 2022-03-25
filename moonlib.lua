@@ -1,3 +1,7 @@
+--[[
+# Developed by jakep#0001
+moonlib v1
+--]]
 
 local lib = {}
 
