@@ -4,6 +4,12 @@ local lib = {}
 
 function lib:CreateWindow(name, imageid)
 
+local moonlibframe == game.CoreGui:WaitForChild("MoonLIB")
+if moonlibframe.Name = "MoonLIB" then
+moonlibframe:Destroy()
+end
+
+
 imageid = imageid or "9160626035"
 
     local MoonLIB = Instance.new("ScreenGui")
