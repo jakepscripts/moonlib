@@ -4,9 +4,6 @@ local lib = {}
 
 function lib:CreateWindow(name, imageid)
 
-if not game.CoreGui:FindFirstChild("MoonLIB") then
-print("test")
-end
 
 imageid = imageid or "9160626035"
 
