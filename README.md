@@ -9,4 +9,9 @@
 # What is MoonLIB? 🤔
 MoonLIB, is a ROBLOX UI Library, easy and simplistic to use. No bloatware, all open source, and free to the public for use. The design of MoonLIB is based off of Moon Animator. Keep in mind this is my first UI Library, and I am very excited to release this it may not be as amazing as other lib's but if your looking for a type of theme like Moon Animator this is the one.
 
-# How to Use? ⬆️
+# How to Use? ✅
+Using MoonLIB is very simplistic and easy, it requires no effort at all! Simply go to the moonlib-docs page, and within 5 Minutes you should know everything about it. 
+
+# Links 🖇️
+Documentation: https://jakep.gitbook.io/moonlib/
+V3RM: https://v3rmillion.net/member.php?action=profile&uid=1169693
