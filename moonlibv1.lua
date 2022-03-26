@@ -731,7 +731,7 @@ local EpicLib = {}
 function EpicLib:CreateTab(text)
     text = text or "NewTab"
 
-    
+         
     local MainButton = Instance.new("ImageButton")
     local Label = Instance.new("TextLabel")
     local Hover = Instance.new("Frame")
@@ -743,7 +743,7 @@ function EpicLib:CreateTab(text)
     local egrid = Instance.new("UIGridLayout")
     local MainContainer = Instance.new("Frame")
     local UIGridLayout = Instance.new("UIGridLayout")
-    
+    local stringedinstance = Instance.new("StringValue")
     MainButton.Name = "MainButton"
     MainButton.Parent = Buttons
     MainButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -828,7 +828,8 @@ function EpicLib:CreateTab(text)
         Hover.Visible = false
     end)
     
-    
+
+
     --Properties:
     
     MainContainer.Name = text
@@ -837,8 +838,11 @@ function EpicLib:CreateTab(text)
     MainContainer.BackgroundTransparency = 1.000
     MainContainer.Position = UDim2.new(0.0250000004, 0, 0.0350000001, 0)
     MainContainer.Size = UDim2.new(0, 663, 0, 591)
-    MainContainer.Visible = false
-
+    
+        firstthing = Container:GetChildren()[2]
+        secondthing = Container:GetChildren()[3]
+    firstthing.Visible = false
+    
     UIGridLayout.Parent = MainContainer
     UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
@@ -1220,5 +1224,7 @@ end
 end
 return EpicLib
 end
+
+
 
 return lib
