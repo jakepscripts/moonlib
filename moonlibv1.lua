@@ -837,7 +837,8 @@ function EpicLib:CreateTab(text)
     MainContainer.BackgroundTransparency = 1.000
     MainContainer.Position = UDim2.new(0.0250000004, 0, 0.0350000001, 0)
     MainContainer.Size = UDim2.new(0, 663, 0, 591)
-    
+    MainContainer.Visible = false
+
     UIGridLayout.Parent = MainContainer
     UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
