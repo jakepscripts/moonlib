@@ -1,17 +1,19 @@
 --[[
-# Developed by jakep#0001
-moonlib v1
+# moonlib v1
+# developed by jakep#0001
+# fully open source enjoy (;
 --]]
 
 local lib = {}
 
 
-function lib:CreateWindow(name, imageid)
+function lib:CreateWindow(name, colorid, imageid)
 
+local imageid = imageid or "9160626035"
+local colorid = colorid or "#b36415"
+local MoonLIB = Instance.new("ScreenGui")
+local imagestring = Instance.new("StringValue")
 
-imageid = imageid or "9160626035"
-
-    local MoonLIB = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UIScale = Instance.new("UIScale")
 local Shadow = Instance.new("ImageLabel")
@@ -120,7 +122,7 @@ Shadow.SliceCenter = Rect.new(25, 25, 280, 280)
 
 TitleBar.Name = "TitleBar"
 TitleBar.Parent = Frame
-TitleBar.BackgroundColor3 = Color3.fromRGB(179, 100, 21)
+TitleBar.BackgroundColor3 = Color3.fromHex(colorid)
 TitleBar.BorderSizePixel = 0
 TitleBar.ClipsDescendants = true
 TitleBar.Size = UDim2.new(1, 0, 0, 30)
@@ -211,7 +213,7 @@ MenuBar.Size = UDim2.new(1, 0, 0, 20)
 Decor.Name = "Decor"
 Decor.Parent = MenuBar
 Decor.AnchorPoint = Vector2.new(0, 1)
-Decor.BackgroundColor3 = Color3.fromRGB(123, 69, 15)
+Decor.BackgroundColor3 =  Color3.fromHex(colorid)
 Decor.BorderSizePixel = 0
 Decor.Position = UDim2.new(0, 0, 1, 0)
 Decor.Size = UDim2.new(1, 0, 0, 2)
@@ -407,7 +409,7 @@ LayerList.ZIndex = 2
 
 TopDecor.Name = "TopDecor"
 TopDecor.Parent = LayerList
-TopDecor.BackgroundColor3 = Color3.fromRGB(163, 91, 19)
+TopDecor.BackgroundColor3 =  Color3.fromHex(colorid)
 TopDecor.BorderSizePixel = 0
 TopDecor.Position = UDim2.new(-0.0250000004, 0, 0, 0)
 TopDecor.Size = UDim2.new(1.02499998, 0, 0, 19)
@@ -434,7 +436,7 @@ Bottom_2.ZIndex = 4
 Resize.Name = "Resize"
 Resize.Parent = TopDecor
 Resize.AnchorPoint = Vector2.new(1, 0)
-Resize.BackgroundColor3 = Color3.fromRGB(192, 111, 24)
+Resize.BackgroundColor3 =  Color3.fromHex(colorid)
 Resize.BorderSizePixel = 0
 Resize.Position = UDim2.new(1, 0, 0, 1)
 Resize.Size = UDim2.new(0, 6, 1, -2)
@@ -647,7 +649,7 @@ Line_8.ZIndex = 12
 TopDecor_2.Name = "TopDecor"
 TopDecor_2.Parent = Timeline
 TopDecor_2.Active = false
-TopDecor_2.BackgroundColor3 = Color3.fromRGB(163, 91, 19)
+TopDecor_2.BackgroundColor3 =  Color3.fromHex(colorid)
 TopDecor_2.BorderSizePixel = 0
 TopDecor_2.Selectable = false
 TopDecor_2.Size = UDim2.new(1, 0, 0, 19)
@@ -675,7 +677,7 @@ Top_4.ZIndex = 8
 Line_9.Name = "Line"
 Line_9.Parent = Timeline
 Line_9.AnchorPoint = Vector2.new(1, 0)
-Line_9.BackgroundColor3 = Color3.fromRGB(123, 69, 15)
+Line_9.BackgroundColor3 =  Color3.fromHex(colorid)
 Line_9.BorderSizePixel = 0
 Line_9.Position = UDim2.new(1, 0, 0, 16)
 Line_9.Size = UDim2.new(0, 1, 1, -16)
@@ -693,7 +695,7 @@ StatusBar.Size = UDim2.new(1, 0, 0, 22)
 
 Decor_3.Name = "Decor"
 Decor_3.Parent = StatusBar
-Decor_3.BackgroundColor3 = Color3.fromRGB(192, 111, 24)
+Decor_3.BackgroundColor3 =  Color3.fromHex(colorid)
 Decor_3.BorderSizePixel = 0
 Decor_3.Position = UDim2.new(0, 0, 0, -1)
 Decor_3.Size = UDim2.new(1, 0, 0, 1)
@@ -760,7 +762,7 @@ function EpicLib:CreateTab(text)
     Label.ZIndex = 4
     Label.Font = Enum.Font.Code
     Label.Text = text
-    Label.TextColor3 = Color3.fromRGB(207, 138, 0)
+    Label.TextColor3 = Color3.fromHex(colorid)
     Label.TextSize = 14.000
     
     Hover.Name = "Hover"
@@ -839,7 +841,7 @@ function EpicLib:CreateTab(text)
     UIGridLayout.Parent = MainContainer
     UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
-    UIGridLayout.CellSize = UDim2.new(0, 130, 0, 30)
+    UIGridLayout.CellSize = UDim2.new(0, 145, 0, 30)
 
  
     MainButton.MouseButton1Click:Connect(function()
@@ -852,13 +854,53 @@ function EpicLib:CreateTab(text)
     egrid.SortOrder = Enum.SortOrder.LayoutOrder
     egrid.CellPadding = UDim2.new(0, 20, 0, 20)
     egrid.CellSize = UDim2.new(0, 130, 0, 30)
-    print(MainContainer.Name)
     end)
     end
 
 
-    
-    
+function EpicLib:CreateLabel(text, pathname)
+local UILabel = Instance.new("Frame")
+local useless1 = Instance.new("Frame")
+local useless2 = Instance.new("Frame")
+local useless3 = Instance.new("Frame")
+
+local UILabelText = Instance.new("TextLabel")
+
+
+UILabel.Name = "UILabel"
+UILabel.Parent = Container[pathname]
+UILabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UILabel.Size = UDim2.new(0, 100, 0, 100)
+
+useless1.Name = "useless1"
+useless1.Parent = Container[pathname]
+useless1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+useless1.BackgroundTransparency = 1
+useless1.Size = UDim2.new(0, 100, 0, 100)
+
+useless2.Name = "useless2"
+useless2.Parent = Container[pathname]
+useless2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+useless2.BackgroundTransparency = 1
+useless2.Size = UDim2.new(0, 100, 0, 100)
+
+useless3.Name = "useless3"
+useless3.Parent = Container[pathname]
+useless3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+useless3.BackgroundTransparency = 1
+useless3.Size = UDim2.new(0, 100, 0, 100)
+
+UILabelText.Name = "UILabelText"
+UILabelText.Parent = UILabel
+UILabelText.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+UILabelText.BorderColor3 = Color3.fromHex(colorid)
+UILabelText.Position = UDim2.new(0, 0, -0.0456852801, 0)
+UILabelText.Size = UDim2.new(0, 641, 0, 34)
+UILabelText.Font = Enum.Font.SourceSans
+UILabelText.Text = text
+UILabelText.TextColor3 = Color3.fromHex(colorid)
+UILabelText.TextSize = 14.000
+end
 function EpicLib:CreateButton(text, pathname, callback)
     local callback = callback or function() end
     local BTNLib = Instance.new("TextButton")
@@ -866,12 +908,12 @@ function EpicLib:CreateButton(text, pathname, callback)
     BTNLib.Name = "BTNLib"
     BTNLib.Parent = Container[pathname]
     BTNLib.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-    BTNLib.BorderColor3 = Color3.fromRGB(255, 170, 0)
+    BTNLib.BorderColor3 = Color3.fromHex(colorid)
     BTNLib.Size = UDim2.new(0, 151, 0, 21)
-    BTNLib.ZIndex = 2
+    BTNLib.ZIndex = 9999999
     BTNLib.Font = Enum.Font.Code
     BTNLib.Text = text
-    BTNLib.TextColor3 = Color3.fromRGB(211, 141, 0)
+    BTNLib.TextColor3 = Color3.fromHex(colorid)
     BTNLib.TextScaled = false
     BTNLib.TextSize = 14.000
     BTNLib.TextWrapped = true
@@ -893,7 +935,7 @@ function EpicLib:CreateToggle(text, pathname, callback)
     ToggleFrame.Name = "ToggleFrame"
     ToggleFrame.Parent = Container[pathname]
     ToggleFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-    ToggleFrame.BorderColor3 = Color3.fromRGB(255, 170, 0)
+    ToggleFrame.BorderColor3 =  Color3.fromHex(colorid)
     ToggleFrame.Position = UDim2.new(0.277526408, 0, 0.152284265, 0)
     ToggleFrame.Size = UDim2.new(0, 100, 0, 36)
 
@@ -901,21 +943,22 @@ function EpicLib:CreateToggle(text, pathname, callback)
     ToggleName.Parent = ToggleFrame
     ToggleName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     ToggleName.BackgroundTransparency = 1.000
-    ToggleName.Position = UDim2.new(0.0884615481, 0, 0.166666672, 0)
+    ToggleName.Position = UDim2.new(0.412, 0,0.167, 0)
     ToggleName.Size = UDim2.new(0, 58, 0, 20)
     ToggleName.Font = Enum.Font.Code
     ToggleName.Text = text
-    ToggleName.TextColor3 = Color3.fromRGB(255, 170, 0)
+    ToggleName.TextColor3 =  Color3.fromHex(colorid)
     ToggleName.TextScaled = true
     ToggleName.TextSize = 14.000
     ToggleName.TextWrapped = true
 
     ToggleBTN.Name = "ToggleBTN"
     ToggleBTN.Parent = ToggleFrame
-    ToggleBTN.BackgroundColor3 = Color3.fromRGB(136, 91, 0)
+    ToggleBTN.BackgroundColor3 = Color3.fromHex(colorid)
+    ToggleBTN.BackgroundTransparency = 0.5
     ToggleBTN.BorderSizePixel = 0
-    ToggleBTN.Position = UDim2.new(0.660000026, 0, 0.303000003, 0)
-    ToggleBTN.Size = UDim2.new(0, 27, 0, 15)
+    ToggleBTN.Position = UDim2.new(0.037, 0,0.2, 0)
+    ToggleBTN.Size = UDim2.new(0, 30,0, 19)
     ToggleBTN.ZIndex = 6999
     ToggleBTN.Font = Enum.Font.SourceSans
     ToggleBTN.Text = " "
@@ -924,14 +967,14 @@ function EpicLib:CreateToggle(text, pathname, callback)
 
     local function Fire()
         enabled = not enabled
-        ToggleBTN.BackgroundColor3 = enabled and Color3.fromRGB(255, 170, 0) or Color3.fromRGB(136, 91, 0)
+        ToggleBTN.BackgroundTransparency = enabled and 0 or 0.5
         pcall(callback, enabled)
     end
 
     ToggleBTN.MouseButton1Click:Connect(Fire)
     
     function actions:Set(arg)
-    ToggleBTN.BackgroundColor3 = enabled and Color3.fromRGB(255, 170, 0) or Color3.fromRGB(136, 91, 0)
+    ToggleBTN.BackgroundTransparency = enabled and 0 or 0.5
     pcall(callback, arg)
     end
 
@@ -954,7 +997,7 @@ function EpicLib:CreateToggle(text, pathname, callback)
         SliderFrame.Name = "SliderFrame"
         SliderFrame.Parent = Container[pathname]
         SliderFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-        SliderFrame.BorderColor3 = Color3.fromRGB(209, 139, 0)
+        SliderFrame.BorderColor3 =  Color3.fromHex(colorid)
         SliderFrame.Position = UDim2.new(0.73001492, 0, 0.260575294, 0)
         SliderFrame.Size = UDim2.new(0, 130, 0, 40)
 
@@ -962,23 +1005,23 @@ function EpicLib:CreateToggle(text, pathname, callback)
         SliderAmount.Parent = SliderFrame
         SliderAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         SliderAmount.BackgroundTransparency = 1.000
-        SliderAmount.Position = UDim2.new(0.550000012, 0, 0, 0)
+        SliderAmount.Position = UDim2.new(0.695, 0,0, 0)
         SliderAmount.Size = UDim2.new(0, 58, 0, 12)
         SliderAmount.Font = Enum.Font.SourceSans
-        SliderAmount.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+        SliderAmount.PlaceholderColor3 =  Color3.fromHex(colorid)
         SliderAmount.Text = "0"
-        SliderAmount.TextColor3 = Color3.fromRGB(182, 121, 0)
+        SliderAmount.TextColor3 =  Color3.fromHex(colorid)
         SliderAmount.TextSize = 14.000
 
         SliderName.Name = "SliderName"
         SliderName.Parent = SliderFrame
         SliderName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         SliderName.BackgroundTransparency = 1.000
-        SliderName.Position = UDim2.new(-0.0346153863, 0, 0.0833333358, 0)
+        SliderName.Position = UDim2.new(-0.025, 0,0.09, 0)
         SliderName.Size = UDim2.new(0, 58, 0, 10)
         SliderName.Font = Enum.Font.Code
         SliderName.Text = text
-        SliderName.TextColor3 = Color3.fromRGB(182, 121, 0)
+        SliderName.TextColor3 =  Color3.fromHex(colorid)
         SliderName.TextScaled = true
         SliderName.TextSize = 14.000
         SliderName.TextWrapped = true
@@ -987,13 +1030,13 @@ function EpicLib:CreateToggle(text, pathname, callback)
         BackSlider.Parent = SliderFrame
         BackSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
         BackSlider.Position = UDim2.new(0.0769230798, 0, 0.5, 0)
-        BackSlider.Size = UDim2.new(0, 111, 0, 7)
+        BackSlider.Size = UDim2.new(0, 126,0, 7)
         BackSlider.BorderSizePixel = 0
 
 
 TASlider.Name = "TASlider"
 TASlider.Parent = SliderFrame
-TASlider.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+TASlider.BackgroundColor3 =  Color3.fromHex(colorid)
 TASlider.Position = UDim2.new(0.0769230798, 0, 0.5, 0)
 TASlider.Size = UDim2.new(0, 0,0, 7)
 TASlider.BorderSizePixel = 0
@@ -1003,7 +1046,7 @@ TASBTN.Parent = SliderFrame
 TASBTN.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
 TASBTN.BackgroundTransparency = 1.000
 TASBTN.Position = UDim2.new(0.0769999996, 0, 0.5, 0)
-TASBTN.Size = UDim2.new(0, 114,0, 7)
+TASBTN.Size = UDim2.new(0, 130,0, 7)
 TASBTN.Font = Enum.Font.SourceSans
 TASBTN.Text = " "
 TASBTN.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -1021,28 +1064,28 @@ local Value;
 -----Main Code-----
  
 TASBTN.MouseButton1Click:Connect(function()
-    Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 111) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
+    Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 126) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
     pcall(function()
         callback(Value)
     end)
-    TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 111), 0, 7)
+    TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7)
     moveconnection = mouse.Move:Connect(function()
         SliderAmount.Text = Value
-        Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 111) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
+        Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 126) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
         pcall(function()
             callback(Value)
             SliderAmount.Text = Value
         end)
-        TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 111), 0, 7)
+        TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7)
     end)
     releaseconnection = uis.InputEnded:Connect(function(Mouse)
         if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
-            Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 111) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
+            Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 126) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
             pcall(function()
                 callback(Value)
                 SliderAmount.Text = Value
             end)
-            TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 111), 0, 7)
+            TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7)
             moveconnection:Disconnect()
             releaseconnection:Disconnect()
         end
@@ -1057,7 +1100,6 @@ function EpicLib:CreateDropdown(text, pathname, list, callback)
     local dropvalue = 0
     local function dropthing()
         dropvalue = dropvalue + 31
-        print(dropvalue)
     end
     local IsDropped = false
 
@@ -1077,7 +1119,7 @@ function EpicLib:CreateDropdown(text, pathname, list, callback)
     Dropdown.Name = "Dropdown"
     Dropdown.Parent = Container[pathname]
     Dropdown.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-    Dropdown.BorderColor3 = Color3.fromRGB(255, 170, 0)
+    Dropdown.BorderColor3 =  Color3.fromHex(colorid)
     Dropdown.Position = UDim2.new(0.458521873, 0, 0.260575294, 0)
     Dropdown.Size = UDim2.new(0, 100, 0, 36)
     
@@ -1091,7 +1133,7 @@ DropName.Position = UDim2.new(0.0884615481, 0, 0.166666672, 0)
 DropName.Size = UDim2.new(0, 58, 0, 20)
 DropName.Font = Enum.Font.Code
 DropName.Text = " "..text
-DropName.TextColor3 = Color3.fromRGB(255, 170, 0)
+DropName.TextColor3 =  Color3.fromHex(colorid)
 DropName.TextScaled = true
 DropName.TextSize = 14.000
 DropName.TextWrapped = true
@@ -1109,8 +1151,8 @@ DropFrameContainer.Name = "DropFrameContainer"
 DropFrameContainer.Parent = DropdownFrame
 DropFrameContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 DropFrameContainer.BackgroundTransparency = 1.000
-DropFrameContainer.Position = UDim2.new(-0.06, 0,0, 2)
-DropFrameContainer.Size = UDim2.new(0, 145, 0, dropvalue)
+DropFrameContainer.Position = UDim2.new(-0.010, 0.0001,0, 1)
+DropFrameContainer.Size = UDim2.new(0, 150, 0, dropvalue)
 DropFrameContainer.ZIndex = 9999999
 DropFrameContainer.ClipsDescendants = true
 
@@ -1122,7 +1164,7 @@ DropdownBTN.Position = UDim2.new(0.535000026, 0, 0.166999996, 0)
 DropdownBTN.Size = UDim2.new(0, 58, 0, 20)
 DropdownBTN.Font = Enum.Font.SourceSans
 DropdownBTN.Text = "+"
-DropdownBTN.TextColor3 = Color3.fromRGB(255, 170, 0)
+DropdownBTN.TextColor3 =  Color3.fromHex(colorid)
 DropdownBTN.TextScaled = true
 DropdownBTN.TextSize = 14.000
 DropdownBTN.TextWrapped = true
@@ -1145,22 +1187,22 @@ end)
  UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
  UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
  UIGridLayout.CellPadding = UDim2.new(0, 5, 0, 0)
- UIGridLayout.CellSize = UDim2.new(0, 130, 0, 30)
+ UIGridLayout.CellSize = UDim2.new(0, 145, 0, 30)
 
 for i,v in next, list do
     local BTNLib = Instance.new("TextButton")
 
     dropthing()
-    DropFrameContainer.Size = UDim2.new(0, 145, 0, dropvalue)
+    DropFrameContainer.Size = UDim2.new(0, 147, 0, dropvalue)
     BTNLib.Name = "BTNLib"
     BTNLib.Parent = DropFrameContainer
     BTNLib.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-    BTNLib.BorderColor3 = Color3.fromRGB(255, 170, 0)
-    BTNLib.Size = UDim2.new(0, 151, 0, 21)
+    BTNLib.BorderColor3 =  Color3.fromHex(colorid)
+    BTNLib.Size = UDim2.new(0, 150, 0, 59)
     BTNLib.ZIndex = 999999999
     BTNLib.Font = Enum.Font.Code
     BTNLib.Text = v
-    BTNLib.TextColor3 = Color3.fromRGB(211, 141, 0)
+    BTNLib.TextColor3 =  Color3.fromHex(colorid)
     BTNLib.TextScaled = false
     BTNLib.TextSize = 14.000
     BTNLib.TextWrapped = true
