@@ -744,6 +744,16 @@ function EpicLib:CreateTab(text)
     local MainContainer = Instance.new("Frame")
     local UIGridLayout = Instance.new("UIGridLayout")
     local stringedinstance = Instance.new("StringValue")
+    local mainframe = Instance.new("Frame")
+
+mainframe.Name = "MoonHandler"
+mainframe.Parent = Container
+mainframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mainframe.BackgroundTransparency = 1.000
+mainframe.Position = UDim2.new(0.0250000004, 0, 0.0350000001, 0)
+mainframe.Size = UDim2.new(0, 663, 0, 591)
+mainframe.Visible = false
+
     MainButton.Name = "MainButton"
     MainButton.Parent = Buttons
     MainButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -839,8 +849,7 @@ function EpicLib:CreateTab(text)
     MainContainer.Position = UDim2.new(0.0250000004, 0, 0.0350000001, 0)
     MainContainer.Size = UDim2.new(0, 663, 0, 591)
     
-        firstthing = Container:GetChildren()[2]
-        secondthing = Container:GetChildren()[3]
+    firstthing = Container:GetChildren()[2]
     firstthing.Visible = false
     
     UIGridLayout.Parent = MainContainer
@@ -1225,6 +1234,3 @@ end
 return EpicLib
 end
 
-
-
-return lib
