@@ -369,12 +369,13 @@ Container.BorderSizePixel = 0
 Container.Position = UDim2.new(0.00441176491, 0, 0.0855105072, 0)
 Container.Size = UDim2.new(0, 676, 0, 220)
 Container.ScrollBarThickness = 0
+Container.CanvasSize = UDim2.new(0, 0, 3, 0)
 
 MainContainer.Name = "MainContainer"
 MainContainer.Parent = Container
 MainContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MainContainer.BackgroundTransparency = 1.000
-MainContainer.Position = UDim2.new(0.0251479298, 0, 0.0322765, 0)
+MainContainer.Position = UDim2.new(0.025, 0,0.02, 0)
 MainContainer.Size = UDim2.new(0, 663, 0, 591)
 
 uigrid = Instance.new("UIGridLayout")
