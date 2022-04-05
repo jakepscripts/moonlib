@@ -709,6 +709,187 @@ Zoom.Position = UDim2.new(0, 27, 0, 0)
 Zoom.Size = UDim2.new(0, 155, 1, 0)
 Zoom.ZIndex = 3
 
+local MoonHome = Instance.new("Frame")
+local AvatarImage = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local WelcomeLBL = Instance.new("TextLabel")
+local UsernameLabel = Instance.new("TextLabel")
+local InformationLBL = Instance.new("TextLabel")
+local ExecutorLabel = Instance.new("TextLabel")
+local VersionLabel = Instance.new("TextLabel")
+local FPSLBL = Instance.new("TextLabel")
+
+--Properties:
+
+MoonHome.Name = "MoonHome"
+MoonHome.Parent = Container
+MoonHome.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MoonHome.BackgroundTransparency = 1.000
+MoonHome.Position = UDim2.new(0.0250000004, 0, 0.0199999996, 0)
+MoonHome.Size = UDim2.new(0, 663, 0, 616)
+
+AvatarImage.Name = "AvatarImage"
+AvatarImage.Parent = MoonHome
+AvatarImage.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+AvatarImage.Position = UDim2.new(-0.00452488707, 0, 0.0227272734, 0)
+AvatarImage.Size = UDim2.new(0, 142, 0, 143)
+AvatarImage.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+UICorner.CornerRadius = UDim.new(0, 100)
+UICorner.Parent = AvatarImage
+
+WelcomeLBL.Name = "WelcomeLBL"
+WelcomeLBL.Parent = MoonHome
+WelcomeLBL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WelcomeLBL.BackgroundTransparency = 1.000
+WelcomeLBL.Position = UDim2.new(0.220211163, 0, 0.0551948063, 0)
+WelcomeLBL.Size = UDim2.new(0, 262, 0, 37)
+WelcomeLBL.Font = Enum.Font.Code
+WelcomeLBL.Text = "Welcome,"
+WelcomeLBL.TextColor3 = Color3.fromHex(colorid)
+WelcomeLBL.TextSize = 23.000
+WelcomeLBL.TextWrapped = true
+WelcomeLBL.TextXAlignment = Enum.TextXAlignment.Left
+
+local NameThing = game.Players.LocalPlayer.Name
+UsernameLabel.Name = "UsernameLabel"
+UsernameLabel.Parent = MoonHome
+UsernameLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UsernameLabel.BackgroundTransparency = 1.000
+UsernameLabel.Position = UDim2.new(0.220211163, 0, 0.108766235, 0)
+UsernameLabel.Size = UDim2.new(0, 228, 0, 27)
+UsernameLabel.Font = Enum.Font.Code
+UsernameLabel.RichText = true
+UsernameLabel.Text = "<b>" .. NameThing .. "!</b>"
+UsernameLabel.TextColor3 = Color3.fromHex(colorid)
+UsernameLabel.TextSize = 23.000
+UsernameLabel.TextWrapped = true
+UsernameLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+InformationLBL.Name = "InformationLBL"
+InformationLBL.Parent = MoonHome
+InformationLBL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InformationLBL.BackgroundTransparency = 1.000
+InformationLBL.Position = UDim2.new(0.686274529, 0, 0.0698051974, 0)
+InformationLBL.Size = UDim2.new(0, 146, 0, 19)
+InformationLBL.Font = Enum.Font.Code
+InformationLBL.Text = "Information,"
+InformationLBL.TextColor3 = Color3.fromHex(colorid)
+InformationLBL.TextSize = 23.000
+InformationLBL.TextWrapped = true
+InformationLBL.TextXAlignment = Enum.TextXAlignment.Left
+
+local function getexploit()
+    local exploit =
+        (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
+        (secure_load and "Sentinel") or
+        (is_sirhurt_closure and "Sirhurt") or
+        (pebc_execute and "ProtoSmasher") or
+        (KRNL_LOADED and "Krnl     ") or
+        (WrapGlobal and "JJSploit") or
+        (isvm and "Proxo") or
+        (shadow_env and "Shadow") or
+        (jit and "EasyExploits") or
+        (getscriptenvs and "Calamari") or
+        (unit and not syn and "Unit") or
+        (OXYGEN_LOADED and "Oxygen U") or
+        (IsElectron and "Electron") or
+        ("Unknown")
+  
+    return exploit
+  end
+  
+  local cexploit = getexploit()
+
+ExecutorLabel.Name = "ExecutorLabel"
+ExecutorLabel.Parent = MoonHome
+ExecutorLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ExecutorLabel.BackgroundTransparency = 1.000
+ExecutorLabel.Position = UDim2.new(0.686274529, 0, 0.108766235, 0)
+ExecutorLabel.Size = UDim2.new(0, 198, 0, 27)
+ExecutorLabel.Font = Enum.Font.Code
+ExecutorLabel.RichText = true
+ExecutorLabel.Text = "<b>Executor: ".. cexploit .. "     </b>"
+ExecutorLabel.TextColor3 = Color3.fromHex(colorid)
+ExecutorLabel.TextScaled = true
+ExecutorLabel.TextSize = 23.000
+ExecutorLabel.TextWrapped = true
+ExecutorLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+VersionLabel.Name = "VersionLabel"
+VersionLabel.Parent = MoonHome
+VersionLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+VersionLabel.BackgroundTransparency = 1.000
+VersionLabel.Position = UDim2.new(0.686274529, 0, 0.152597398, 0)
+VersionLabel.Size = UDim2.new(0, 198, 0, 27)
+VersionLabel.Font = Enum.Font.Code
+VersionLabel.RichText = true
+VersionLabel.Text = "<b>Version: 1.7.2     </b>"
+VersionLabel.TextColor3 = Color3.fromHex(colorid)
+VersionLabel.TextScaled = true
+VersionLabel.TextSize = 23.000
+VersionLabel.TextWrapped = true
+VersionLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+FPSLBL.Name = "FPS"
+FPSLBL.Parent = MoonHome
+FPSLBL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FPSLBL.BackgroundTransparency = 1.000
+FPSLBL.Position = UDim2.new(0.686274529, 0, 0.196428567, 0)
+FPSLBL.Size = UDim2.new(0, 198, 0, 27)
+FPSLBL.Font = Enum.Font.Code
+FPSLBL.RichText = true
+FPSLBL.Text = "<b>FPS: -          </b>"
+FPSLBL.TextColor3 = Color3.fromHex(colorid)
+FPSLBL.TextScaled = true
+FPSLBL.TextSize = 23.000
+FPSLBL.TextWrapped = true
+FPSLBL.TextXAlignment = Enum.TextXAlignment.Left
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local RunService = game:GetService("RunService")
+local TimeFunction = RunService:IsRunning() and time or os.clock
+
+local LastIteration, Start
+local FrameUpdateTable = {}
+
+local function HeartbeatUpdate()
+	LastIteration = TimeFunction()
+	for Index = #FrameUpdateTable, 1, -1 do
+		FrameUpdateTable[Index + 1] = FrameUpdateTable[Index] >= LastIteration - 1 and FrameUpdateTable[Index] or nil
+	end
+
+	FrameUpdateTable[1] = LastIteration
+	local FPS = (math.floor(TimeFunction() - Start >= 1 and #FrameUpdateTable or #FrameUpdateTable / (TimeFunction() - Start)))
+    FPSLBL.Text = "<b>FPS: ".. tostring(FPS) .. "          </b>"
+
+end
+
+Start = TimeFunction()
+RunService.Heartbeat:Connect(HeartbeatUpdate)
+
+-- Scripts:
+
+local function NPQPWX_fake_script() -- AvatarImage.LocalScript 
+	local script = Instance.new('LocalScript', AvatarImage)
+
+	local Players = game:GetService("Players")
+	
+	local player = Players.LocalPlayer
+	
+	local userId = player.UserId
+	local thumbType = Enum.ThumbnailType.HeadShot
+	local thumbSize = Enum.ThumbnailSize.Size420x420
+	local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+	
+	
+	script.Parent.Image = content
+end
+coroutine.wrap(NPQPWX_fake_script)()
+
+
 local function ZURCG_fake_script() -- Close.Script 
 	local script = Instance.new('Script', Close)
 
@@ -745,15 +926,7 @@ function EpicLib:CreateTab(text)
     local MainContainer = Instance.new("Frame")
     local UIGridLayout = Instance.new("UIGridLayout")
     local stringedinstance = Instance.new("StringValue")
-    local mainframe = Instance.new("Frame")
 
-mainframe.Name = "MoonHandler"
-mainframe.Parent = Container
-mainframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-mainframe.BackgroundTransparency = 1.000
-mainframe.Position = UDim2.new(0.0250000004, 0, 0.0350000001, 0)
-mainframe.Size = UDim2.new(0, 663, 0, 591)
-mainframe.Visible = false
 
     MainButton.Name = "MainButton"
     MainButton.Parent = Buttons
@@ -850,9 +1023,12 @@ mainframe.Visible = false
     MainContainer.Position = UDim2.new(0.0250000004, 0, 0.0350000001, 0)
     MainContainer.Size = UDim2.new(0, 663, 0, 591)
     
-    firstthing = Container:GetChildren()[2]
-    firstthing.Visible = false
+    local children = Container:GetChildren()
+    for i, child in ipairs(children) do
+	child.Visible = false
+    end
     
+    MoonHome.Visible = true
     UIGridLayout.Parent = MainContainer
     UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
@@ -1127,7 +1303,7 @@ function EpicLib:CreateDropdown(text, pathname, list, callback)
     local DropdownBTN = Instance.new("TextButton")
     local DropdownFrame = Instance.new("Frame")
     local UIGridLayout = Instance.new("UIGridLayout")
-    local DropName = Instance.new("TextLabel")
+    local DropName = Instance.new("TextBox")
     local DropFrameContainer = Instance.new("Frame")
 
 
@@ -1140,18 +1316,22 @@ function EpicLib:CreateDropdown(text, pathname, list, callback)
     
 
 
+--Properties:
+
 DropName.Name = "DropName"
 DropName.Parent = Dropdown
 DropName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 DropName.BackgroundTransparency = 1.000
-DropName.Position = UDim2.new(0.0884615481, 0, 0.166666672, 0)
+DropName.Position = UDim2.new(0.0879999995, 0, 0.166999996, 0)
 DropName.Size = UDim2.new(0, 58, 0, 20)
+DropName.ZIndex = 999999999
+DropName.ClearTextOnFocus = false
 DropName.Font = Enum.Font.Code
-DropName.Text = " "..text
-DropName.TextColor3 =  Color3.fromHex(colorid)
-DropName.TextScaled = true
+DropName.PlaceholderColor3 = Color3.fromHex(colorid)
+DropName.PlaceholderText = " "..text
+DropName.Text = ""
+DropName.TextColor3 = Color3.fromHex(colorid)
 DropName.TextSize = 14.000
-DropName.TextWrapped = true
 
 DropdownFrame.Name = "DropdownFrame"
 DropdownFrame.Parent = Dropdown
@@ -1229,10 +1409,32 @@ for i,v in next, list do
         DropdownFrame.Visible = false
         DropdownBTN.Text = "+"
     end)
+    local searchBar = DropName
+    local items = DropFrameContainer
+    
+    local function UpdateResults()
+        local search = string.lower(searchBar.Text)
+        for i, v in	 pairs(items:GetChildren()) do
+            if v:IsA("GuiButton") then
+                if search ~= "" then
+                    local item = string.lower(v.Text)
+                    if string.find(item, search) then
+                        v.Visible = true
+                    else
+                        v.Visible = false
+                    end
+                else
+                    v.Visible = true
+                end
+            end
+        end
+    end
+    
+    searchBar.Changed:Connect(UpdateResults)
+
 end
 end
 end
 return EpicLib
 end
-
 return lib
