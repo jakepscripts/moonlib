@@ -786,7 +786,7 @@ local function getexploit()
         (is_sirhurt_closure and "Sirhurt") or
         (pebc_execute and "ProtoSmasher") or
         (KRNL_LOADED and "Krnl     ") or
-        (WrapGlobal and "JJSploit") or
+        (WrapGlobal and "WeAreDevs") or
         (isvm and "Proxo") or
         (shadow_env and "Shadow") or
         (jit and "EasyExploits") or
@@ -1327,6 +1327,7 @@ DropName.Size = UDim2.new(0, 58, 0, 20)
 DropName.ZIndex = 999999999
 DropName.ClearTextOnFocus = false
 DropName.Font = Enum.Font.Code
+DropName.TextScaled = true
 DropName.PlaceholderColor3 = Color3.fromHex(colorid)
 DropName.PlaceholderText = " "..text
 DropName.Text = ""
