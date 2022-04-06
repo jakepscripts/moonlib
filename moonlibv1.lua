@@ -127,6 +127,8 @@ TitleBar.BorderSizePixel = 0
 TitleBar.ClipsDescendants = true
 TitleBar.Size = UDim2.new(1, 0, 0, 30)
 TitleBar.AutoButtonColor = false
+TitleBar.Selectable = true
+TitleBar.Draggable = true
 
 Title.Name = "Title"
 Title.Parent = TitleBar
