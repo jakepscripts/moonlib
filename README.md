@@ -1,4 +1,4 @@
-# MoonLIB | V1 ⚡
+# MoonLIB | V2 ⚡
 
 <a href="https://github.com/jakepscripts/moonlib-v1/stargazers"><img src="https://img.shields.io/github/stars/jakepscripts/moonlib-v1" alt="Stars Badge"/></a>
 <a href="https://github.com/jakepscripts/moonlib-v1/network/members"><img src="https://img.shields.io/github/forks/jakepscripts/moonlib-v1" alt="Forks Badge"/></a>
@@ -6,14 +6,16 @@
 <a href="https://github.com/ajakepscripts/moonlib-v1/issues"><img src="https://img.shields.io/github/issues/jakepscripts/moonlib-v1" alt="Issues Badge"/></a>
 <a href="https://github.com/jakepscripts/moonlib-v1/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/jakepscripts/moonlib-v1?color=2b9348"></a>
 
-# What is MoonLIB? 🤔
-MoonLIB, is a ROBLOX UI Library, easy and simplistic to use. No bloatware, all open source, and free to the public for use. The design of MoonLIB is based off of Moon Animator. Keep in mind this is my first UI Library, and I am very excited to release this it may not be as amazing as other lib's but if your looking for a type of theme like Moon Animator this is the one.
+# What is MoonLIB? 
+Moon is a User Interface for ROBLOX, commonly known as a UI Library. It's ment for helping developers
+create there scripts, without having to work on a entire UI. 
 
-# How to Use? ✅
-Using MoonLIB is very simplistic and easy, it requires no effort at all! Simply go to the moonlib-docs page, and within 
-5 Minutes you should know everything about it. 
+# Why Use Moon?
+Using Moon is very simplistic and easy, it requires no effort at all. Simply go to the moon-docs! and Moon is free, open-source with a strong flow of updates. That means no bloat, and packed with features you need.
 
 # Links 🖇️
 Documentation: https://jakep.gitbook.io/moonlib/
+Discord: https://discord.gg/genTgwv7nz
+Source: https://raw.githubusercontent.com/jakepscripts/moonlib/main/moonlibv2.lua
 
 V3RM: https://v3rmillion.net/member.php?action=profile&uid=1169693
