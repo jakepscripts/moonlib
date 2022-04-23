@@ -2148,7 +2148,9 @@ TASBTN.MouseButton1Click:Connect(function()
     pcall(function()
         callback(Value)
     end)
+    TASlider:TweenSize(UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7), Enum.EasingDirection.InOut, Enum.EasingStyle.Quad, 0.1, false)
     TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7)
+
     moveconnection = mouse.Move:Connect(function()
         SliderAmount.Text = Value
         Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 126) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
@@ -2156,7 +2158,9 @@ TASBTN.MouseButton1Click:Connect(function()
             callback(Value)
             SliderAmount.Text = Value
         end)
+        TASlider:TweenSize(UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7), Enum.EasingDirection.InOut, Enum.EasingStyle.Quad, 0.1, false)
         TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7)
+
     end)
     releaseconnection = uis.InputEnded:Connect(function(Mouse)
         if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -2165,7 +2169,9 @@ TASBTN.MouseButton1Click:Connect(function()
                 callback(Value)
                 SliderAmount.Text = Value
             end)
+            TASlider:TweenSize(UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7), Enum.EasingDirection.InOut, Enum.EasingStyle.Quad, 0.1, false)
             TASlider.Size = UDim2.new(0, math.clamp(mouse.X - TASlider.AbsolutePosition.X, 0, 126), 0, 7)
+
             moveconnection:Disconnect()
             releaseconnection:Disconnect()
         end
@@ -2819,5 +2825,4 @@ end
 end
 return EpicLib
 end
-
 return lib
