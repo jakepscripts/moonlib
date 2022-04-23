@@ -1,4 +1,4 @@
-# MoonLIB | V2
+# MoonLIB | V2 ⚡
 
 <a href="https://github.com/jakepscripts/moonlib-v1/stargazers"><img src="https://img.shields.io/github/stars/jakepscripts/moonlib-v1" alt="Stars Badge"/></a>
 <a href="https://github.com/jakepscripts/moonlib-v1/network/members"><img src="https://img.shields.io/github/forks/jakepscripts/moonlib-v1" alt="Forks Badge"/></a>
