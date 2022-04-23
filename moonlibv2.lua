@@ -131,44 +131,55 @@ MOONCStroke.Thickness = 1.1
 local UserInputService = game:GetService("UserInputService")
 local runService = (game:GetService("RunService"));
 
-function dragify(Frame)
-dragToggle = nil
-dragSpeed = .25 -- You can edit this.
-dragInput = nil
-dragStart = nil
-dragPos = nil
+local gui = Frame
 
-function updateInput(input)
-Delta = input.Position - dragStart
-Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-game:GetService("TweenService"):Create(Frame, TweenInfo.new(.25), {Position = Position}):Play()
-end
+local dragging
+local dragInput
+local dragStart
+local startPos
 
-Frame.InputBegan:Connect(function(input)
-if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
-dragToggle = true
-dragStart = input.Position
-startPos = Frame.Position
-input.Changed:Connect(function()
-if (input.UserInputState == Enum.UserInputState.End) then
-dragToggle = false
-end
-end)
-end
+function Lerp(a, b, m)
+	return a + (b - a) * m
+end;
+
+local lastMousePos
+local lastGoalPos
+local DRAG_SPEED = (12); -- // The speed of the UI darg.
+function Update(dt)
+	if not (startPos) then return end;
+	if not (dragging) and (lastGoalPos) then
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+		return 
+	end;
+
+	local delta = (lastMousePos - UserInputService:GetMouseLocation())
+	local xGoal = (startPos.X.Offset - delta.X);
+	local yGoal = (startPos.Y.Offset - delta.Y);
+	lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+	gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+end;
+
+gui.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = gui.Position
+		lastMousePos = UserInputService:GetMouseLocation()
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
 end)
 
-Frame.InputChanged:Connect(function(input)
-if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
-dragInput = input
-end
+gui.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
 end)
 
-game:GetService("UserInputService").InputChanged:Connect(function(input)
-if (input == dragInput and dragToggle) then
-updateInput(input)
-end
-end)
-end
 runService.Heartbeat:Connect(Update)
 Shadow.Name = "Shadow"
 Shadow.Parent = MOONC
