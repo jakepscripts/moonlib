@@ -2585,7 +2585,7 @@ for i,v in next, list do
      Popup:Destroy()
  end
  
- Dropdown.MouseEnter:Connect(function()
+ Keybind.MouseEnter:Connect(function()
  
  Popup.Name = "Popup"
  Popup.Parent = MoonLIB.Frame
@@ -2728,7 +2728,7 @@ for i,v in next, list do
  end)
  
  
- Dropdown.MouseLeave:Connect(function()
+ Keybind.MouseLeave:Connect(function()
  wait(1)
  Title.Text = text.." | 3"
  wait(1)
