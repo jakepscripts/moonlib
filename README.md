@@ -1,4 +1,4 @@
-# MoonLIB | V2 ⚡
+# MoonLIB | V2
 
 <a href="https://github.com/jakepscripts/moonlib-v1/stargazers"><img src="https://img.shields.io/github/stars/jakepscripts/moonlib-v1" alt="Stars Badge"/></a>
 <a href="https://github.com/jakepscripts/moonlib-v1/network/members"><img src="https://img.shields.io/github/forks/jakepscripts/moonlib-v1" alt="Forks Badge"/></a>
@@ -13,7 +13,7 @@ create there scripts, without having to work on a entire UI.
 # Why Use Moon?
 Using Moon is very simplistic and easy, it requires no effort at all. Simply go to the moon-docs! and Moon is free, open-source with a strong flow of updates. That means no bloat, and packed with features you need.
 
-# Links 🖇️
+# Links
 Documentation: https://jakep.gitbook.io/moonlib/
 Discord: https://discord.gg/genTgwv7nz
 Source: https://raw.githubusercontent.com/jakepscripts/moonlib/main/moonlibv2.lua
