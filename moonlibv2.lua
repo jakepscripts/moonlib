@@ -1402,6 +1402,7 @@ popupstroke.Thickness = 1.1
     Title.Size = UDim2.new(1, -29, 1, 0)
     Title.ZIndex = 2
     Title.Font = Enum.Font.Code
+    Title.TextScaled = false
     Title.Text = text
     Title.TextColor3 = Color3.fromRGB(255, 255, 255)
     Title.TextSize = 15.000
@@ -2825,4 +2826,6 @@ end
 end
 return EpicLib
 end
+
+
 return lib
