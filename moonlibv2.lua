@@ -2144,7 +2144,7 @@ local Value;
  
 -----Main Code-----
  
-TASBTN.MouseButton1Click:Connect(function()
+TASBTN.MouseButton1Down:Connect(function()
     Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 126) * TASlider.AbsoluteSize.X) + tonumber(minvalue)) or SliderAmount.Text
     pcall(function()
         callback(Value)
@@ -2826,6 +2826,5 @@ end
 end
 return EpicLib
 end
-
 
 return lib
